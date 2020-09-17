@@ -1,27 +1,27 @@
 # Exercise 8
 
-# Variable called formatter with 4 input brackets
+# Creating a variable called formatter that can take 4 arguments
 formatter = "{} {} {} {}"
 
-# Just taking a look at formatter
-print(formatter)
+# You get thrown an error if you provide less than 4 arguments
+# I experimented throwing 5 arguments here, and the fifth argument is ignored
+print(formatter.format(1, 2, 3, 4, 5))
 
-# Using format to fill the 4 input brackets in variable formatter
-print(formatter.format(1, 2, 3, 4))
-
-# Using format to fill the 4 input brackets within the variable formatter with new values
+# Throwing string arguments
 print(formatter.format("one", "two", "three", "four"))
 
-# We now throw some Boolean values into formatter
-print(formatter.format(True, False, False, True))
+# Throwing booleans and a string argument into formatter
+print(formatter.format(True, False, False, "Butterfly"))
 
-# Throwing formatter into itself here to get a ton of brackets
+# This is meta - throwing a variable back into itself
 print(formatter.format(formatter, formatter, formatter, formatter))
 
-# Throwing text strings into formatter
+# This all prints on one line. The interpreter does not care about the line breaks.
+# This is still read as a list of strings
 print(formatter.format(
     "Try your",
     "Own text here",
     "Maybe a poem",
-    "Or a song about fear"
+    "Or a song about fear",
+    "Or even a song about deer" # this line does not show up (fifth arg)
 ))
